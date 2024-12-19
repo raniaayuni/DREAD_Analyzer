@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAD Analyzer: Menganalisis dan Menilai Risiko Keamanan Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DREAD Analyzer</h1>
+
+        <label for="asset">Pilih Aset</label>
+        <select id="asset">
+            <option value="">Pilih Aset</option>
+            <option value="server">Server</option>
+            <option value="database">Database</option>
+            <option value="data pengguna">Data Pengguna</option>
+            <option value="api">API</option>
+        </select>
+
+        <label for="stride">Kategori STRIDE</label>
+        <select id="stride">
+            <option value="">Pilih Ancaman STRIDE</option>
+            <option value="tampering">Tampering</option>
+            <option value="information-disclosure">Information Disclosure</option>
+            <option value="dos">Denial of Service</option>
+            <option value="elevation">Elevation of Privilege</option>
+            <option value="spoofing">Spoofing</option>
+        </select>
+
+        <label for="damage">Damage</label>
+        <input type="number" id="damage" min="0" max="10" placeholder="0-10">
+
+        <label for="reproducibility">Reproducibility</label>
+        <input type="number" id="reproducibility" min="0" max="10" placeholder="0-10">
+
+        <label for="exploitability">Exploitability</label>
+        <input type="number" id="exploitability" min="0" max="10" placeholder="0-10">
+
+        <label for="affected-users">Affected Users</label>
+        <input type="number" id="affected-users" min="0" max="10" placeholder="0-10">
+
+        <label for="discoverability">Discoverability</label>
+        <input type="number" id="discoverability" min="0" max="10" placeholder="0-10">
+
+        <button class="generate-btn" onclick="generateChart()">Generate Grafik</button>
+
+        <div id="chart-container" style="display: none;">
+            <canvas id="chart" width="400" height="400"></canvas>
+        </div>
+
+        <div id="risk-description" class="risk-description" style="display: none;">
+            <h3>Deskripsi Ancaman</h3>
+            <p id="threat-description"></p>
+            <h3>Tingkat Risiko</h3>
+            <p id="risk-level"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

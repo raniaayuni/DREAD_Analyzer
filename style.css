@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e8f9e1, #a1e9c4); /* Green gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Container Style */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header Style */
+h1 {
+    font-weight: 700;
+    color: #4CAF50; /* Green color */
+    font-size: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Label Style */
+label {
+    display: block;
+    font-weight: 600;
+    color: #444;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* Select & Input Field Styles */
+select, input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+select:focus, input[type="number"]:focus {
+    border-color: #4CAF50; /* Green border on focus */
+}
+
+/* Button Style */
+.generate-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Chart Container */
+#chart-container {
+    margin-top: 40px;
+}
+
+/* Risk Description Box */
+.risk-description {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.risk-description h3 {
+    color: #4CAF50; /* Green color */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    .generate-btn {
+        font-size: 16px;
+    }
+}
