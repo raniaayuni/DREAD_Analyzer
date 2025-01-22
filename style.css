@@ -120,3 +120,31 @@ select:focus, input[type="number"]:focus {
         font-size: 16px;
     }
 }
+
+.app-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.threat-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.threat-details h3 {
+    color: #4CAF50;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.threat-details ul {
+    list-style: disc;
+    padding-left: 20px;
+}

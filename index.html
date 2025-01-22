@@ -10,6 +10,12 @@
 <body>
     <div class="container">
         <h1>DREAD Analyzer</h1>
+        
+        <!-- Deskripsi Aplikasi -->
+        <p class="app-description">
+            DREAD Analyzer adalah alat bantu untuk menganalisis dan menilai tingkat risiko keamanan digital pada berbagai aset berdasarkan model DREAD. 
+            Dengan menggunakan pendekatan kuantitatif, aplikasi ini membantu Anda memahami ancaman yang ada dan mengambil tindakan mitigasi yang sesuai.
+        </p>
 
         <label for="asset">Pilih Aset</label>
         <select id="asset">
@@ -31,19 +37,19 @@
         </select>
 
         <label for="damage">Damage</label>
-        <input type="number" id="damage" min="0" max="10" placeholder="0-10">
+        <input type="number" id="damage" min="1" max="10" placeholder="1-10">
 
         <label for="reproducibility">Reproducibility</label>
-        <input type="number" id="reproducibility" min="0" max="10" placeholder="0-10">
+        <input type="number" id="reproducibility" min="1" max="10" placeholder="1-10">
 
         <label for="exploitability">Exploitability</label>
-        <input type="number" id="exploitability" min="0" max="10" placeholder="0-10">
+        <input type="number" id="exploitability" min="1" max="10" placeholder="1-10">
 
         <label for="affected-users">Affected Users</label>
-        <input type="number" id="affected-users" min="0" max="10" placeholder="0-10">
+        <input type="number" id="affected-users" min="1" max="10" placeholder="1-10">
 
         <label for="discoverability">Discoverability</label>
-        <input type="number" id="discoverability" min="0" max="10" placeholder="0-10">
+        <input type="number" id="discoverability" min="1" max="10" placeholder="1-10">
 
         <button class="generate-btn" onclick="generateChart()">Generate Grafik</button>
 
@@ -56,8 +62,31 @@
             <p id="threat-description"></p>
             <h3>Tingkat Risiko</h3>
             <p id="risk-level"></p>
+            
+            <!-- Penilaian DREAD dengan Risiko -->
+            <div id="dread-assessment">
+                <h3>Penilaian DREAD</h3>
+                <ul>
+                    <li><strong>1-2:</strong> Risiko sangat rendah. Kerusakan dan dampaknya hampir tidak terasa.</li>
+                    <li><strong>3-4:</strong> Risiko rendah. Dampak ada, tetapi tidak signifikan.</li>
+                    <li><strong>5-6:</strong> Risiko sedang. Perlu perhatian khusus, tetapi tidak mendesak.</li>
+                    <li><strong>7-8:</strong> Risiko tinggi. Dampak signifikan dan membutuhkan mitigasi segera.</li>
+                    <li><strong>9-10:</strong> Risiko sangat tinggi. Kerusakan parah dan perlu tindakan segera.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Keterangan Ancaman Berdasarkan Skor -->
+        <div id="threat-details" class="threat-details" style="display: none;">
+            <h3>Keterangan Ancaman</h3>
+            <ul id="threat-list"></ul>
         </div>
     </div>
+
+    <!-- Copyright Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 DREAD Analyzer.Rania Ayuni.</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
