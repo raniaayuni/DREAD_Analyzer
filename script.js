@@ -68,14 +68,28 @@ function generateChart() {
 
     document.getElementById("risk-description").style.display = "block";
     document.getElementById("threat-description").innerText = `Ancaman "${stride}" yang dipilih berkaitan dengan risiko yang spesifik terhadap ${dreadScores.asset}, memiliki potensi ancaman signifikan bergantung pada skor DREAD.`;
-    
-    let riskLevel;
-    if (dreadScore >= 7) {
+
+    let riskLevel, threatDetails, solutions;
+    if (dreadScore >= 9) {
+        riskLevel = "Sangat Tinggi";
+        threatDetails = "Ancaman ini memiliki dampak yang sangat serius terhadap sistem dan pengguna.";
+        solutions = "Segera lakukan mitigasi dengan memperkuat enkripsi, memperbarui sistem, dan melakukan audit keamanan menyeluruh.";
+    } else if (dreadScore >= 7) {
         riskLevel = "Tinggi";
+        threatDetails = "Ancaman ini dapat menyebabkan kerusakan signifikan dan mengganggu operasional.";
+        solutions = "Lakukan evaluasi sistem keamanan dan implementasikan firewall serta monitoring secara aktif.";
     } else if (dreadScore >= 4) {
         riskLevel = "Sedang";
+        threatDetails = "Ancaman ini memiliki dampak yang dapat ditangani, tetapi perlu diawasi.";
+        solutions = "Pantau sistem secara berkala dan lakukan update keamanan.";
     } else {
         riskLevel = "Rendah";
+        threatDetails = "Ancaman ini memiliki dampak kecil dan risiko kerusakan minimal.";
+        solutions = "Pastikan standar keamanan tetap dipenuhi dan lakukan pengawasan rutin.";
     }
+
     document.getElementById("risk-level").innerText = `Tingkat Risiko: ${riskLevel} (Skor DREAD rata-rata: ${dreadScore.toFixed(2)})`;
+    document.getElementById("dread-solutions").style.display = "block";
+    document.getElementById("dread-threat-details").innerText = threatDetails;
+    document.getElementById("dread-solutions-text").innerText = solutions;
 }
